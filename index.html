@@ -186,6 +186,12 @@
             background: #FAF2EE;
         }
 
+        /* Feature columns: flex to equalize card heights */
+        .wpo-feature-section .row > [class*="col-"] {
+            display: flex;
+            margin-bottom: 30px;
+        }
+
         /* Feature icon cards */
         .wpo-feature-section .wpo-feature-item {
             text-align: center;
@@ -193,7 +199,28 @@
             border: 1px solid #F3ECE9;
             transition: all 0.3s;
             background: #fff;
-            margin-bottom: 30px;
+            min-height: 280px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .wpo-feature-section .wpo-feature-item .wpo-feature-icon {
+            flex-shrink: 0;
+            margin-bottom: 25px;
+        }
+
+        .wpo-feature-section .wpo-feature-item h3 {
+            flex-shrink: 0;
+            margin-bottom: 15px;
+        }
+
+        .wpo-feature-section .wpo-feature-item p {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .wpo-feature-section .wpo-feature-item:hover {
@@ -235,7 +262,7 @@
 
         /* Hero section (Company Introduction) */
         .wpo-hero-section {
-            background: #fff;
+            background: linear-gradient(135deg, #faf5f8 0%, #f8f0f5 100%);
             padding: 80px 0;
         }
 
@@ -274,6 +301,28 @@
 
         .wpo-hero-section .hero-feature-item {
             padding: 30px 20px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .wpo-hero-section .hero-feature-item .wpo-feature-icon {
+            flex-shrink: 0;
+            margin-bottom: 20px;
+        }
+
+        .wpo-hero-section .hero-feature-item h3 {
+            flex-shrink: 0;
+            margin-bottom: 15px;
+        }
+
+        .wpo-hero-section .hero-feature-item p {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* Override feature item title font to elegant serif */
@@ -339,6 +388,26 @@
 
             .wpo-hero-section .hero-feature-item {
                 padding: 20px 12px;
+                height: 240px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .wpo-hero-section .hero-feature-item .wpo-feature-icon {
+                flex-shrink: 0;
+                margin-bottom: 12px;
+            }
+
+            .wpo-hero-section .hero-feature-item h3 {
+                margin-bottom: 10px;
+            }
+
+            .wpo-hero-section .hero-feature-item p {
+                flex-grow: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
 
             .wpo-hero-section .hero-feature-item .wpo-feature-icon {
@@ -501,9 +570,30 @@
             to   { opacity: 0; transform: translateY(-20px); }
         }
 
-        /* Contact info cards */
-        .wpo-contact-pg-section .office-info-item {
-            margin-bottom: 30px;
+        /* Contact info columns: flex to equalize card heights */
+        .wpo-contact-pg-section .office-info .row > .col {
+            display: flex !important;
+        }
+
+        /* Contact info cards - Keep original style, only fix height */
+        .wpo-contact-pg-section .office-info .office-info-item {
+            min-height: 180px !important;
+            width: 100% !important;
+            flex: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+        }
+
+        @media (max-width: 767px) {
+            .wpo-contact-pg-section .office-info .office-info-item {
+                min-height: 150px !important;
+            }
+
+            .wpo-feature-section .wpo-feature-item {
+                min-height: 240px;
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
