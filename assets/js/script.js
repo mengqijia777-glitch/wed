@@ -428,13 +428,11 @@
     /*------------------------------------------
         = FUNFACT / ODOMETER
     -------------------------------------------*/
+    // Initialize odometer immediately on page load
     if ($(".odometer").length) {
-        $(".odometer").appear();
-        $(document.body).on("appear", ".odometer", function () {
-            $(".odometer").each(function () {
-                const countNumber = $(this).attr("data-count");
-                $(this).html(countNumber);
-            });
+        $(".odometer").each(function () {
+            const countNumber = $(this).attr("data-count");
+            $(this).html(countNumber);
         });
     }
 
