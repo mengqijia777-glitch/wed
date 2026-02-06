@@ -2429,7 +2429,7 @@ a.ui-button:active, .ui-button:active,
     max-width: 100%;
   }
   .wpo-site-header .header-right {
-    right: -10px;
+    right: 15px;
   }
   .wpo-site-header .navbar-header button span {
     background-color: #fff;
@@ -2571,7 +2571,7 @@ a.ui-button:active, .ui-button:active,
     margin-right: 10px;
   }
   .wpo-site-header .header-right {
-    right: -30px;
+    right: 15px;
   }
 }
 
