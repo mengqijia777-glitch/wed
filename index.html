@@ -233,6 +233,150 @@
             margin-bottom: 0;
         }
 
+        /* Hero section (Company Introduction) */
+        .wpo-hero-section {
+            background: #fff;
+            padding: 80px 0;
+        }
+
+        .wpo-hero-section .wpo-section-title h4 {
+            color: #B5A2BD;
+        }
+
+        .wpo-hero-section .wpo-section-title h2 {
+            color: #242424;
+        }
+
+        /* Remove decorative lines from h2 */
+        .wpo-hero-section .wpo-section-title h2::before,
+        .wpo-hero-section .wpo-section-title h2::after {
+            display: none;
+        }
+
+        .wpo-hero-section .wpo-section-title p {
+            color: #707070;
+        }
+
+        .wpo-hero-section .hero-intro-text {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .wpo-hero-section .hero-service-row {
+            margin-top: 50px;
+        }
+
+        .wpo-hero-section .hero-service-col {
+            margin-bottom: 30px;
+        }
+
+        .wpo-hero-section .hero-feature-item {
+            padding: 30px 20px;
+        }
+
+        /* Override feature item title font to elegant serif */
+        .wpo-hero-section .hero-feature-item h3 {
+            font-family: "Times New Roman", Times, Georgia, serif;
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: #242424;
+            letter-spacing: 0.3px;
+        }
+
+        .wpo-hero-section .hero-cta {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* Desktop: 4 columns */
+        @media (min-width: 992px) {
+            .wpo-hero-section .hero-service-col {
+                margin-bottom: 0;
+            }
+        }
+
+        /* Tablet: 2 columns */
+        @media (min-width: 768px) and (max-width: 991px) {
+            .wpo-hero-section .hero-service-col:nth-child(2) {
+                margin-bottom: 0;
+            }
+            .wpo-hero-section .hero-service-col:nth-child(1) {
+                margin-bottom: 30px;
+            }
+        }
+
+        /* Mobile: 2 columns, compact layout */
+        @media (max-width: 767px) {
+            .wpo-hero-section {
+                padding: 50px 0;
+            }
+
+            .wpo-hero-section .wpo-section-title h4 {
+                font-size: 14px;
+            }
+
+            .wpo-hero-section .wpo-section-title h2 {
+                font-size: 26px;
+            }
+
+            .wpo-hero-section .hero-intro-text {
+                font-size: 14px;
+                padding: 0 10px;
+            }
+
+            .wpo-hero-section .hero-service-row {
+                margin-top: 30px;
+            }
+
+            .wpo-hero-section .hero-service-col {
+                margin-bottom: 15px;
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+
+            .wpo-hero-section .hero-feature-item {
+                padding: 20px 12px;
+            }
+
+            .wpo-hero-section .hero-feature-item .wpo-feature-icon {
+                width: 60px;
+                height: 60px;
+                line-height: 60px;
+                font-size: 24px;
+            }
+
+            .wpo-hero-section .hero-feature-item h3 {
+                font-size: 16px;
+                margin-bottom: 8px;
+                font-family: "Times New Roman", Times, Georgia, serif;
+                font-weight: 500;
+                letter-spacing: 0.3px;
+            }
+
+            .wpo-hero-section .hero-feature-item p {
+                font-size: 13px;
+                line-height: 1.5;
+            }
+
+            .wpo-hero-section .hero-cta {
+                margin-top: 30px;
+            }
+        }
+
+        /* Small mobile */
+        @media (max-width: 480px) {
+            .wpo-hero-section {
+                padding: 40px 0;
+            }
+
+            .wpo-hero-section .hero-feature-item {
+                padding: 20px 15px;
+            }
+        }
+
         /* Templates banner section */
         .wpo-templates-section {
             position: relative;
@@ -432,7 +576,66 @@
         </header>
         <!-- end of header -->
 
-        <!-- start wpo-templates-section (Template Showcase) -->
+        <!-- start wpo-hero-section (Company Introduction) -->
+        <section class="wpo-hero-section section-padding" id="home">
+            <div class="container">
+                <div class="wpo-section-title text-center">
+                    <h4>Welcome to DreamoonTech</h4>
+                    <h2>Your Digital Growth Partner</h2>
+                    <p class="hero-intro-text">We help businesses build a strong online presence through professional website development and effective digital marketing solutions.</p>
+                </div>
+
+                <!-- Service Highlights -->
+                <div class="row justify-content-center hero-service-row">
+                    <div class="col-lg-3 col-md-6 col-6 hero-service-col">
+                        <div class="wpo-feature-item text-center hero-feature-item">
+                            <div class="wpo-feature-icon">
+                                <i class="ti-world"></i>
+                            </div>
+                            <h3>Website Design</h3>
+                            <p>Custom business websites, e-commerce solutions, and responsive designs</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-6 hero-service-col">
+                        <div class="wpo-feature-item text-center hero-feature-item">
+                            <div class="wpo-feature-icon">
+                                <i class="ti-announcement"></i>
+                            </div>
+                            <h3>Digital Marketing</h3>
+                            <p>Social media, content creation, and brand promotion strategies</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-6 hero-service-col">
+                        <div class="wpo-feature-item text-center hero-feature-item">
+                            <div class="wpo-feature-icon">
+                                <i class="ti-search"></i>
+                            </div>
+                            <h3>SEO Services</h3>
+                            <p>Google optimization and local search visibility improvement</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-6 hero-service-col">
+                        <div class="wpo-feature-item text-center hero-feature-item">
+                            <div class="wpo-feature-icon">
+                                <i class="ti-shopping-cart"></i>
+                            </div>
+                            <h3>Shopify Development</h3>
+                            <p>E-commerce store setup and customization</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hero-cta">
+                    <a href="#contact" class="theme-btn">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- end wpo-hero-section -->
+
+        <!-- start wpo-templates-section -->
         <section class="wpo-templates-section section-padding" id="templates"
             style="background-image: url(assets/images/contact/bg.jpg);">
             <div class="container">
@@ -680,7 +883,7 @@
                                         </div>
                                         <div class="office-info-text">
                                             <h2>Address</h2>
-                                            <p>4517 Washington Ave.<br>Manchester, Kentucky 39495</p>
+                                            <p>2/3 Greenhill Rd, Wayville SA 5034<br>Adelaide, South Australia</p>
                                         </div>
                                     </div>
                                 </div>
@@ -693,8 +896,7 @@
                                         </div>
                                         <div class="office-info-text">
                                             <h2>Email Us</h2>
-                                            <p>info@weddingtechco.com</p>
-                                            <p>support@weddingtechco.com</p>
+                                            <p>contact@dreamoontech.com</p>
                                         </div>
                                     </div>
                                 </div>
@@ -707,7 +909,7 @@
                                         </div>
                                         <div class="office-info-text">
                                             <h2>Call Now</h2>
-                                            <p>+1 (555) 123-4567</p>
+                                            <p>0493 493 3597</p>
                                             <p>Mon - Sat: 9AM - 6PM</p>
                                         </div>
                                     </div>
