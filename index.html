@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Wedding Tech">
+    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
+    <title>Wedding Tech - Digital Wedding Solutions</title>
+    <link href="assets/css/themify-icons.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/flaticon.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/css/owl.carousel.css" rel="stylesheet">
+    <link href="assets/css/owl.theme.css" rel="stylesheet">
+    <link href="assets/css/slick.css" rel="stylesheet">
+    <link href="assets/css/slick-theme.css" rel="stylesheet">
+    <link href="assets/css/swiper.min.css" rel="stylesheet">
+    <link href="assets/css/nice-select.css" rel="stylesheet">
+    <link href="assets/css/owl.transitions.css" rel="stylesheet">
+    <link href="assets/css/magnific-popup.css" rel="stylesheet">
+    <link href="assets/css/jquery.fancybox.css" rel="stylesheet">
+    <link href="assets/css/odometer-theme-default.css" rel="stylesheet">
+    <link href="assets/css/jquery-ui.css" rel="stylesheet">
+    <link href="assets/sass/style.css" rel="stylesheet">
+
+    <style>
+        /* ===== Showcase-specific styles (supplements Sukun style.css) ===== */
+
+        /* Hero static background */
+        .wpo-hero-static {
+            position: relative;
+            padding: 200px 0 140px;
+            background: linear-gradient(135deg, #FCFDFA 0%, #FAF2EE 50%, #F1F3EE 100%);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .wpo-hero-static::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at center, rgba(181,162,189,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .wpo-hero-static .slide-title h4 {
+            font-family: "monallesia";
+            font-size: 55px;
+            color: #B5A2BD;
+            margin-bottom: 10px;
+        }
+
+        .wpo-hero-static .slide-title h2 {
+            font-family: "Mulish", sans-serif;
+            font-size: 52px;
+            font-weight: 700;
+            color: #242424;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .wpo-hero-static .slide-title p {
+            font-size: 20px;
+            max-width: 650px;
+            margin: 0 auto 40px;
+        }
+
+        @media (max-width: 991px) {
+            .wpo-hero-static { padding: 160px 0 100px; }
+            .wpo-hero-static .slide-title h2 { font-size: 40px; }
+            .wpo-hero-static .slide-title h4 { font-size: 40px; }
+        }
+
+        @media (max-width: 575px) {
+            .wpo-hero-static { padding: 140px 0 80px; }
+            .wpo-hero-static .slide-title h2 { font-size: 28px; }
+            .wpo-hero-static .slide-title h4 { font-size: 30px; }
+            .wpo-hero-static .slide-title p { font-size: 16px; }
+        }
+
+        /* Template Showcase Buttons */
+        .wpo-templates-section .template-btn-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .wpo-templates-section .category-wrap {
+            position: relative;
+        }
+
+        .wpo-templates-section .category-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 30px;
+            background: #fff;
+            border: 1px solid #F3ECE9;
+            color: #242424;
+            font-family: "Mulish", sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .wpo-templates-section .category-btn .count {
+            background: #FAF2EE;
+            color: #B5A2BD;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 3px 9px;
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .wpo-templates-section .category-btn .arrow {
+            font-size: 11px;
+            transition: transform 0.3s;
+        }
+
+        .wpo-templates-section .category-btn:hover,
+        .wpo-templates-section .category-btn.active {
+            background: #B5A2BD;
+            color: #fff;
+            border-color: #B5A2BD;
+        }
+
+        .wpo-templates-section .category-btn:hover .count,
+        .wpo-templates-section .category-btn.active .count {
+            background: rgba(255,255,255,0.25);
+            color: #fff;
+        }
+
+        .wpo-templates-section .category-btn.active .arrow {
+            transform: rotate(180deg);
+        }
+
+        .wpo-templates-section .category-dropdown {
+            display: none;
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fff;
+            border: 1px solid #F3ECE9;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+            padding: 12px 0;
+            z-index: 100;
+            min-width: 230px;
+        }
+
+        .wpo-templates-section .category-dropdown.show {
+            display: block;
+        }
+
+        .wpo-templates-section .category-dropdown a {
+            display: block;
+            padding: 10px 20px;
+            font-family: "Mulish", sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            color: #707070;
+            border-bottom: 1px solid #F3ECE9;
+            transition: all 0.2s;
+        }
+
+        .wpo-templates-section .category-dropdown a:last-child {
+            border-bottom: none;
+        }
+
+        .wpo-templates-section .category-dropdown a:hover {
+            color: #B5A2BD;
+            padding-left: 25px;
+            background: #FAF2EE;
+        }
+
+        /* Feature icon cards */
+        .wpo-feature-section .wpo-feature-item {
+            text-align: center;
+            padding: 40px 25px;
+            border: 1px solid #F3ECE9;
+            transition: all 0.3s;
+            background: #fff;
+            margin-bottom: 30px;
+        }
+
+        .wpo-feature-section .wpo-feature-item:hover {
+            box-shadow: 0 15px 40px rgba(181,162,189,0.15);
+            border-color: #B5A2BD;
+            transform: translateY(-5px);
+        }
+
+        .wpo-feature-section .wpo-feature-icon {
+            width: 90px;
+            height: 90px;
+            line-height: 90px;
+            border-radius: 50%;
+            background: #FAF2EE;
+            color: #B5A2BD;
+            font-size: 36px;
+            margin: 0 auto 25px;
+            transition: all 0.3s;
+        }
+
+        .wpo-feature-section .wpo-feature-item:hover .wpo-feature-icon {
+            background: #B5A2BD;
+            color: #fff;
+        }
+
+        .wpo-feature-section .wpo-feature-item h3 {
+            font-family: "Mulish", sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #242424;
+        }
+
+        .wpo-feature-section .wpo-feature-item p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        /* Templates banner section */
+        .wpo-templates-section {
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .wpo-templates-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(36, 36, 36, 0.75);
+            z-index: -1;
+        }
+
+        .wpo-templates-section .wpo-section-title h4 {
+            color: #B5A2BD;
+        }
+
+        .wpo-templates-section .wpo-section-title h2 {
+            color: #fff;
+        }
+
+        .wpo-templates-section .wpo-section-title h2::after,
+        .wpo-templates-section .wpo-section-title h2::before {
+            display: none;
+        }
+
+        .wpo-templates-section .wpo-section-title p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Master toggle button */
+        .master-toggle-btn {
+            font-size: 18px !important;
+            padding: 20px 60px !important;
+            letter-spacing: 1px;
+            background: transparent !important;
+            border: 2px solid #B5A2BD !important;
+            color: #fff !important;
+            position: relative;
+        }
+
+        .master-toggle-btn:hover,
+        .master-toggle-btn.active {
+            background: #B5A2BD !important;
+            color: #fff !important;
+        }
+
+        .master-toggle-btn .count {
+            background: #B5A2BD;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 12px;
+            margin-left: 8px;
+        }
+
+        .master-toggle-btn.active .count {
+            background: rgba(255,255,255,0.25);
+        }
+
+        .master-toggle-btn .arrow {
+            font-size: 12px;
+            display: inline-block;
+            transition: transform 0.3s;
+            margin-left: 4px;
+        }
+
+        .master-toggle-btn.active .arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Category buttons on dark bg */
+        .wpo-templates-section .category-btn {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.2);
+            color: #fff;
+        }
+
+        .wpo-templates-section .category-btn .count {
+            background: rgba(181,162,189,0.4);
+            color: #fff;
+        }
+
+        .wpo-templates-section .category-btn:hover,
+        .wpo-templates-section .category-btn.active {
+            background: #B5A2BD;
+            border-color: #B5A2BD;
+            color: #fff;
+        }
+
+        .wpo-templates-section .category-btn:hover .count,
+        .wpo-templates-section .category-btn.active .count {
+            background: rgba(255,255,255,0.25);
+        }
+
+        /* Category grid slide animation */
+        .template-btn-grid.expanding {
+            animation: slideDown 0.4s ease forwards;
+        }
+
+        .template-btn-grid.collapsing {
+            animation: slideUp 0.3s ease forwards;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 1; transform: translateY(0); }
+            to   { opacity: 0; transform: translateY(-20px); }
+        }
+
+        /* Contact info cards */
+        .wpo-contact-pg-section .office-info-item {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- start page-wrapper -->
+    <div class="page-wrapper">
+        <!-- start preloader -->
+        <div class="preloader">
+            <div class="vertical-centered-box">
+                <div class="content">
+                    <div class="loader-circle"></div>
+                    <div class="loader-line-mask">
+                        <div class="loader-line"></div>
+                    </div>
+                    <img src="assets/images/preloader.png" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- end preloader -->
+
+        <!-- Start header -->
+        <header id="header">
+            <div class="wpo-site-header wpo-header-style-1">
+                <nav class="navigation navbar navbar-expand-lg navbar-light">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <div class="col-lg-3 col-md-3 col-3 d-lg-none dl-block">
+                                <div class="mobail-menu">
+                                    <button type="button" class="navbar-toggler open-btn">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar first-angle"></span>
+                                        <span class="icon-bar middle-angle"></span>
+                                        <span class="icon-bar last-angle"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-6 col-6">
+                                <div class="navbar-header">
+                                    <a class="navbar-brand" href="#home"><img
+                                            src="assets/images/logo.svg"
+                                            alt="Wedding Tech"></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-8 col-md-1 col-1">
+                                <div id="navbar" class="collapse navbar-collapse navigation-holder">
+                                    <button class="menu-close"><i class="ti-close"></i></button>
+                                    <ul class="nav navbar-nav mb-2 mb-lg-0">
+                                        <li><a href="#home">Home</a></li>
+                                        <li><a href="#templates">Templates</a></li>
+                                        <li><a href="#features">Features</a></li>
+                                        <li><a href="#about">About</a></li>
+                                        <li><a href="#contact">Contact</a></li>
+                                    </ul>
+                                </div><!-- end of nav-collapse -->
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-2">
+                                <div class="header-right">
+                                    <div class="header-search-form-wrapper">
+                                        <div class="cart-search-contact">
+                                            <button class="search-toggle-btn"><i
+                                                    class="fi flaticon-search"></i></button>
+                                            <div class="header-search-form">
+                                                <form>
+                                                    <div>
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Search here...">
+                                                        <button type="submit"><i
+                                                                class="fi flaticon-search"></i></button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- end of container -->
+                </nav>
+            </div>
+        </header>
+        <!-- end of header -->
+
+        <!-- start of wpo-hero-section (static, no carousel) -->
+        <section class="wpo-hero-static" id="home">
+            <div class="container">
+                <div class="slide-title">
+                    <h4>Wedding Tech</h4>
+                    <h2>Your Perfect Wedding, Digitized</h2>
+                    <p>We create elegant digital wedding experiences &mdash; from beautiful websites to interactive photo sharing
+                        and keepsake digital frames.</p>
+                    <a href="#features" class="theme-btn">Explore Our Solutions</a>
+                </div>
+            </div>
+        </section>
+        <!-- end of wpo-hero-section -->
+
+        <!-- start wpo-about-section -->
+        <section class="wpo-about-section" id="about">
+            <div class="container">
+                <div class="wpo-about-wrap">
+                    <div class="row align-items-center">
+                        <div class="col-xl-4 col-lg-4 col-md-12 col-12">
+                            <div class="wpo-about-img wow fadeInLeftSlow" data-wow-duration="1600ms">
+                                <div class="about-right-img">
+                                    <img src="assets/images/about/img-1.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-7 col-lg-7 col-md-12 col-12">
+                            <div class="wpo-about-text wow fadeInUp" data-wow-duration="1600ms">
+                                <p>We blend technology with romance to make every wedding celebration more connected,
+                                    memorable, and effortless. From elegant responsive websites and smart seat lookup systems
+                                    to real-time guest photo sharing and beautiful keepsake digital frames &mdash; our
+                                    mission is to bring modern digital convenience to your most cherished day, without
+                                    losing any of the magic.</p>
+                                <div class="about-info-wrap">
+                                    <div class="about-info">
+                                        <h5>Wedding Tech</h5>
+                                        <span>- Digital Wedding Solutions</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-1 col-lg-1 col-md-12 col-12">
+                            <div class="about-social wow fadeInRightSlow" data-wow-duration="1600ms">
+                                <ul>
+                                    <li><a href="#"><i class="ti-facebook"></i></a></li>
+                                    <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
+                                    <li><a href="#"><i class="ti-instagram"></i></a></li>
+                                    <li><a href="#"><i class="ti-pinterest"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end container -->
+        </section>
+        <!-- end wpo-about-section -->
+
+        <!-- start wpo-fun-fact-section -->
+        <section class="wpo-fun-fact-section pt-120">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-xs-12">
+                        <div class="wpo-fun-fact-grids clearfix">
+                            <div class="grid">
+                                <div class="info">
+                                    <div class="flower"><img
+                                            src="assets/images/funfact/1.svg"
+                                            alt=""></div>
+                                    <h3><span class="odometer" data-count="64">00</span>+</h3>
+                                    <p>Template Pages</p>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <div class="info">
+                                    <div class="flower"><img
+                                            src="assets/images/funfact/2.svg"
+                                            alt=""></div>
+                                    <h3><span class="odometer" data-count="9">00</span></h3>
+                                    <p>Home Styles</p>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <div class="info">
+                                    <div class="flower"><img
+                                            src="assets/images/funfact/3.svg"
+                                            alt=""></div>
+                                    <h3><span class="odometer" data-count="5">00</span></h3>
+                                    <p>Core Features</p>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <div class="info">
+                                    <div class="flower"><img
+                                            src="assets/images/funfact/4.svg"
+                                            alt=""></div>
+                                    <h3><span class="odometer" data-count="100">00</span>%</h3>
+                                    <p>Responsive</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end wpo-fun-fact-section -->
+
+        <!-- start wpo-templates-section (Template Showcase) -->
+        <section class="wpo-templates-section section-padding" id="templates"
+            style="background-image: url(assets/images/contact/bg.jpg);">
+            <div class="container">
+                <div class="wpo-section-title">
+                    <h4>Explore Templates</h4>
+                    <h2>Template Collection</h2>
+                    <p>64 professionally designed wedding templates across 9 categories. Click below to explore.</p>
+                </div>
+
+                <!-- Master toggle button -->
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <button class="theme-btn master-toggle-btn" id="masterToggleBtn" onclick="toggleMaster()">
+                        Explore All Templates <span class="count">64+</span> <span class="arrow" id="masterArrow">&#9662;</span>
+                    </button>
+                </div>
+
+                <!-- Category buttons (hidden by default) -->
+                <div class="template-btn-grid" id="categoryGrid" style="display: none;">
+
+                    <!-- Home Pages -->
+                    <div class="category-wrap">
+                        <button class="category-btn" onclick="toggleDropdown(this)">
+                            Home Pages <span class="count">10</span> <span class="arrow">&#9662;</span>
+                        </button>
+                        <div class="category-dropdown">
+                            <a href="index.html" target="_blank">Wedding Home Style 1</a>
+                            <a href="index-2.html" target="_blank">Wedding Home Style 2</a>
+                            <a href="index-3.html" target="_blank">Announcement Home 1</a>
+                            <a href="index-4.html" target="_blank">Announcement Home 2</a>
+                            <a href="index-5.html" target="_blank">Announcement Home 3</a>
+                            <a href="index-6.html" target="_blank">Asian Wedding Home</a>
+                            <a href="index-7.html" target="_blank">Muslim Wedding Home</a>
+                            <a href="index-rtl.html" target="_blank">Muslim Wedding (RTL)</a>
+                            <a href="index-8.html" target="_blank">Wedding Planner 1</a>
+                            <a href="index-9.html" target="_blank">Wedding Planner 2</a>
+                        </div>
+                    </div>
+
+                    <!-- Invitations -->
+                    <div class="category-wrap">
+                        <button class="category-btn" onclick="toggleDropdown(this)">
+                            Invitations <span class="count">2</span> <span class="arrow">&#9662;</span>
+                        </button>
+                        <div class="category-dropdown">
+                            <a href="invitation-1.html" target="_blank">Wedding Invitation 1</a>
+                            <a href="invitation-2.html" target="_blank">Wedding Invitation 2</a>
+                        </div>
+                    </div>
+
+                    <!-- Story -->
+                    <div class="category-wrap">
+                        <button class="category-btn" onclick="toggleDropdown(this)">
+                            Story <span class="count">7</span> <span class="arrow">&#9662;</span>
+                        </button>
+                        <div class="category-dropdown">
+                            <a href="story.html" target="_blank">Our Story Style 1</a>
+                            <a href="story-2.html" target="_blank">Our Story Style 2</a>
+                            <a href="story-3.html" target="_blank">Our Story Style 3</a>
+                            <a href="story-4.html" target="_blank">Our Story Style 4</a>
+                            <a href="story-5.html" target="_blank">Our Story Style 5</a>
+                            <a href="story-6.html" target="_blank">Our Story Style 6</a>
+                            <a href="story-7.html" target="_blank">Our Story Style 7</a>
+                        </div>
+                    </div>
+
+                    <!-- RSVP -->
+                    <div class="category-wrap">
+                        <button class="category-btn" onclick="toggleDropdown(this)">
+                            RSVP <span class="count">7</span> <span class="arrow">&#9662;</span>
+                        </button>
+                        <div class="category-dropdown">
+                            <a href="rsvp.html" target="_blank">RSVP Style 1</a>
+                            <a href="rsvp-2.html" target="_blank">RSVP Style 2</a>
+                            <a href="rsvp-3.html" target="_blank">RSVP Style 3</a>
+                            <a href="rsvp-4.html" target="_blank">RSVP Style 4</a>
+                            <a href="rsvp-5.html" target="_blank">RSVP Style 5</a>
+                            <a href="rsvp-6.html" target="_blank">RSVP Style 6</a>
+                            <a href="rsvp-7.html" target="_blank">RSVP Style 7</a>
+                        </div>
+                    </div>
+
+                    <!-- Services -->
+                    <div class="category-wrap">
+                        <button class="category-btn" onclick="toggleDropdown(this)">
+                            Services <span class="count">4</span> <span class="arrow">&#9662;</span>
+                        </button>
+                        <div class="category-dropdown">
+                            <a href="service.html" target="_blank">Service Listing</a>
+                            <a href="service-s2.html" target="_blank">Service Style 2</a>
+                            <a href="service-s3.html" target="_blank">Service Style 3</a>
+                            <a href="service-single.html" target="_blank">Service Detail</a>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio -->
+                    <div class="category-wrap">
+                        <button class="category-btn" onclick="toggleDropdown(this)">
+                            Portfolio <span class="count">8</span> <span class="arrow">&#9662;</span>
+                        </button>
+                        <div class="category-dropdown">
+                            <a href="portfolio-grid.html" target="_blank">Portfolio Grid</a>
+                            <a href="portfolio-grid-s2.html" target="_blank">Portfolio Grid S2</a>
+                            <a href="portfolio-grid-s3.html" target="_blank">Portfolio Grid S3</a>
+                            <a href="portfolio-masonary.html" target="_blank">Portfolio Masonry</a>
+                            <a href="portfolio-masonary-s2.html" target="_blank">Portfolio Masonry S2</a>
+                            <a href="portfolio-masonary-s3.html" target="_blank">Portfolio Masonry S3</a>
+                            <a href="portfolio-slide.html" target="_blank">Portfolio Slide</a>
+                            <a href="portfolio-single.html" target="_blank">Portfolio Detail</a>
+                        </div>
+                    </div>
+
+                    <!-- Blog -->
+                    <div class="category-wrap">
+                        <button class="category-btn" onclick="toggleDropdown(this)">
+                            Blog <span class="count">6</span> <span class="arrow">&#9662;</span>
+                        </button>
+                        <div class="category-dropdown">
+                            <a href="blog.html" target="_blank">Blog Right Sidebar</a>
+                            <a href="blog-left-sidebar.html" target="_blank">Blog Left Sidebar</a>
+                            <a href="blog-fullwidth.html" target="_blank">Blog Fullwidth</a>
+                            <a href="blog-single.html" target="_blank">Blog Detail Right Sidebar</a>
+                            <a href="blog-single-left-sidebar.html" target="_blank">Blog Detail Left Sidebar</a>
+                            <a href="blog-single-fullwidth.html" target="_blank">Blog Detail Fullwidth</a>
+                        </div>
+                    </div>
+
+                    <!-- Shop -->
+                    <div class="category-wrap">
+                        <button class="category-btn" onclick="toggleDropdown(this)">
+                            Shop <span class="count">7</span> <span class="arrow">&#9662;</span>
+                        </button>
+                        <div class="category-dropdown">
+                            <a href="shop-home.html" target="_blank">Bridal Shop Home</a>
+                            <a href="shop-home-2.html" target="_blank">Cake Shop Home</a>
+                            <a href="shop.html" target="_blank">Shop Listing</a>
+                            <a href="shop-single.html" target="_blank">Product Detail</a>
+                            <a href="cart.html" target="_blank">Shopping Cart</a>
+                            <a href="checkout.html" target="_blank">Checkout</a>
+                            <a href="wishlist.html" target="_blank">Wishlist</a>
+                        </div>
+                    </div>
+
+                    <!-- Other Pages -->
+                    <div class="category-wrap">
+                        <button class="category-btn" onclick="toggleDropdown(this)">
+                            Other Pages <span class="count">13</span> <span class="arrow">&#9662;</span>
+                        </button>
+                        <div class="category-dropdown">
+                            <a href="about.html" target="_blank">About Us</a>
+                            <a href="contact.html" target="_blank">Contact</a>
+                            <a href="accomodation.html" target="_blank">Accommodation</a>
+                            <a href="gallery.html" target="_blank">Gallery</a>
+                            <a href="groom-bride.html" target="_blank">Groom &amp; Bride</a>
+                            <a href="pricing.html" target="_blank">Pricing</a>
+                            <a href="planner.html" target="_blank">Event Planner</a>
+                            <a href="team-single.html" target="_blank">Team Member</a>
+                            <a href="coming.html" target="_blank">Coming Soon</a>
+                            <a href="login.html" target="_blank">Login</a>
+                            <a href="register.html" target="_blank">Register</a>
+                            <a href="forgot.html" target="_blank">Forgot Password</a>
+                            <a href="404.html" target="_blank">404 Error</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div> <!-- end container -->
+        </section>
+        <!-- end wpo-templates-section -->
+
+        <!-- start wpo-feature-section (Features) -->
+        <section class="wpo-feature-section section-padding" id="features">
+            <div class="container">
+                <div class="wpo-section-title">
+                    <h4>What We Offer</h4>
+                    <h2>Our Features</h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="wpo-feature-item wow fadeInUp" data-wow-duration="1000ms">
+                            <div class="wpo-feature-icon">
+                                <i class="ti-mobile"></i>
+                            </div>
+                            <h3>Elegant Wedding Website</h3>
+                            <p>Mobile-friendly design with RSVP to simplify guest responses. Beautiful, responsive layouts that work on every device.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="wpo-feature-item wow fadeInUp" data-wow-duration="1200ms">
+                            <div class="wpo-feature-icon">
+                                <i class="ti-search"></i>
+                            </div>
+                            <h3>Seat Lookup</h3>
+                            <p>Scan, enter a name, and instantly view table number. A quick, elegant way for guests to find their seats.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="wpo-feature-item wow fadeInUp" data-wow-duration="1400ms">
+                            <div class="wpo-feature-icon">
+                                <i class="ti-camera"></i>
+                            </div>
+                            <h3>Guest Photo Sharing</h3>
+                            <p>Upload photos via QR code to a real-time shared album. Capture every moment from every angle, together.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="wpo-feature-item wow fadeInUp" data-wow-duration="1600ms">
+                            <div class="wpo-feature-icon">
+                                <i class="ti-layout-grid2"></i>
+                            </div>
+                            <h3>QR Code Generation</h3>
+                            <p>Ready for print or inclusion in digital invitations. One scan connects guests to your wedding world.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="wpo-feature-item wow fadeInUp" data-wow-duration="1800ms">
+                            <div class="wpo-feature-icon">
+                                <i class="ti-image"></i>
+                            </div>
+                            <h3>Wooden Digital Photo Frame</h3>
+                            <p>A keepsake frame that loops messages and shared wedding photos. A lasting memory for your home.</p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end container -->
+        </section>
+        <!-- end wpo-feature-section -->
+
+        <!-- start wpo-contact-pg-section (Company Info) -->
+        <section class="wpo-contact-pg-section section-padding" id="contact">
+            <div class="container">
+                <div class="wpo-section-title">
+                    <h4>Get In Touch</h4>
+                    <h2>Company Information</h2>
+                </div>
+                <div class="row">
+                    <div class="col col-lg-10 offset-lg-1">
+                        <div class="office-info">
+                            <div class="row">
+                                <div class="col col-xl-4 col-lg-6 col-md-6 col-12">
+                                    <div class="office-info-item">
+                                        <div class="office-info-icon">
+                                            <div class="icon">
+                                                <i class="fi flaticon-maps-and-flags"></i>
+                                            </div>
+                                        </div>
+                                        <div class="office-info-text">
+                                            <h2>Address</h2>
+                                            <p>4517 Washington Ave.<br>Manchester, Kentucky 39495</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-xl-4 col-lg-6 col-md-6 col-12">
+                                    <div class="office-info-item">
+                                        <div class="office-info-icon">
+                                            <div class="icon">
+                                                <i class="fi flaticon-email"></i>
+                                            </div>
+                                        </div>
+                                        <div class="office-info-text">
+                                            <h2>Email Us</h2>
+                                            <p>info@weddingtechco.com</p>
+                                            <p>support@weddingtechco.com</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-xl-4 col-lg-6 col-md-6 col-12">
+                                    <div class="office-info-item">
+                                        <div class="office-info-icon">
+                                            <div class="icon">
+                                                <i class="fi flaticon-phone-call"></i>
+                                            </div>
+                                        </div>
+                                        <div class="office-info-text">
+                                            <h2>Call Now</h2>
+                                            <p>+1 (555) 123-4567</p>
+                                            <p>Mon - Sat: 9AM - 6PM</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Services & Vision -->
+                <div class="row" style="margin-top: 60px;">
+                    <div class="col col-lg-10 offset-lg-1">
+                        <div class="row align-items-start">
+                            <div class="col-lg-6 col-md-12 col-12">
+                                <div class="wpo-about-text wow fadeInUp" data-wow-duration="1600ms">
+                                    <h3 style="font-family: 'Mulish', sans-serif; font-size: 28px; font-weight: 700; margin-bottom: 20px; color: #242424;">Our Services</h3>
+                                    <ul style="list-style: none; padding: 0;">
+                                        <li style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px solid #F3ECE9; color: #707070; font-size: 16px; line-height: 1.6;">
+                                            <i class="ti-check-box" style="color: #B5A2BD; margin-top: 3px; min-width: 18px;"></i>
+                                            <span>Custom wedding website design &amp; development</span>
+                                        </li>
+                                        <li style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px solid #F3ECE9; color: #707070; font-size: 16px; line-height: 1.6;">
+                                            <i class="ti-check-box" style="color: #B5A2BD; margin-top: 3px; min-width: 18px;"></i>
+                                            <span>Smart RSVP &amp; seat lookup system integration</span>
+                                        </li>
+                                        <li style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px solid #F3ECE9; color: #707070; font-size: 16px; line-height: 1.6;">
+                                            <i class="ti-check-box" style="color: #B5A2BD; margin-top: 3px; min-width: 18px;"></i>
+                                            <span>Real-time guest photo sharing album</span>
+                                        </li>
+                                        <li style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px solid #F3ECE9; color: #707070; font-size: 16px; line-height: 1.6;">
+                                            <i class="ti-check-box" style="color: #B5A2BD; margin-top: 3px; min-width: 18px;"></i>
+                                            <span>QR code generation for invitations &amp; interactions</span>
+                                        </li>
+                                        <li style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; color: #707070; font-size: 16px; line-height: 1.6;">
+                                            <i class="ti-check-box" style="color: #B5A2BD; margin-top: 3px; min-width: 18px;"></i>
+                                            <span>Wooden digital photo frame with looping memories</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-12">
+                                <div class="wpo-about-text wow fadeInUp" data-wow-duration="1800ms">
+                                    <h3 style="font-family: 'Mulish', sans-serif; font-size: 28px; font-weight: 700; margin-bottom: 20px; color: #242424;">Our Vision</h3>
+                                    <p>We believe every couple deserves a seamless digital presence for their most
+                                        cherished day. Our vision is to become the trusted partner for modern weddings
+                                        &mdash; where technology enhances romance, not replaces it.</p>
+                                    <h3 style="font-family: 'Mulish', sans-serif; font-size: 28px; font-weight: 700; margin: 30px 0 20px; color: #242424;">Why Choose Us</h3>
+                                    <p>With years of experience in wedding technology, we deliver elegant, reliable, and
+                                        easy-to-use digital solutions. From the first invitation to the last photo shared,
+                                        we ensure every touchpoint is beautiful, intuitive, and memorable &mdash; so you
+                                        can focus on what truly matters: celebrating love.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end container -->
+        </section>
+        <!-- end wpo-contact-pg-section -->
+
+        <!-- start of wpo-site-footer-section -->
+        <footer class="wpo-site-footer-s5">
+            <div class="wpo-upper-footer">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12">
+                            <div class="widget link-widget">
+                                <div class="widget-title">
+                                    <h3>Quick Links</h3>
+                                </div>
+                                <div class="link-wrap">
+                                    <ul>
+                                        <li><a href="#about">About</a></li>
+                                        <li><a href="#features">Features</a></li>
+                                        <li><a href="#templates">Templates</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="#contact">Contact</a></li>
+                                        <li><a href="#home">Home</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-xl-6 col-lg-4 col-md-6 col-sm-12 col-12">
+                            <div class="widget about-widget">
+                                <div class="logo widget-title">
+                                    <a class="logo" href="#home"><img
+                                            src="assets/images/logo-2.svg"
+                                            alt=""></a>
+                                </div>
+                                <p>We create elegant digital wedding experiences &mdash; from beautiful websites to
+                                    interactive photo sharing and keepsake digital frames.</p>
+                                <ul>
+                                    <li><a href="#"><i class="ti-facebook"></i></a></li>
+                                    <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
+                                    <li><a href="#"><i class="ti-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12">
+                            <div class="widget wpo-service-link-widget">
+                                <div class="widget-title">
+                                    <h3>Contact</h3>
+                                </div>
+                                <div class="contact-ft">
+                                    <p>info@weddingtechco.com</p>
+                                    <p>4517 Washington Ave. Manchester, Kentucky 39495</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end container -->
+            </div>
+            <div class="wpo-lower-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-xs-12">
+                            <p class="copyright"> &copy; Copyright 2025 | <a href="#home">Wedding Tech</a> | All right
+                                reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end of wpo-site-footer-section -->
+
+    </div>
+    <!-- end of page-wrapper -->
+
+    <!-- All JavaScript files -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/modernizr.custom.js"></script>
+    <script src="assets/js/jquery-plugin-collection.js"></script>
+    <script src="assets/js/gsap-active.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <!-- Template showcase dropdown toggle -->
+    <script>
+        function toggleMaster() {
+            var btn = document.getElementById('masterToggleBtn');
+            var grid = document.getElementById('categoryGrid');
+            var isOpen = grid.style.display !== 'none';
+
+            if (isOpen) {
+                // Close: collapse categories + close any open dropdown
+                btn.classList.remove('active');
+                grid.classList.remove('expanding');
+                grid.classList.add('collapsing');
+                setTimeout(function () {
+                    grid.style.display = 'none';
+                    grid.classList.remove('collapsing');
+                    // Also close any open dropdowns
+                    $('.category-dropdown.show').removeClass('show');
+                    $('.category-btn.active').removeClass('active');
+                }, 250);
+            } else {
+                // Open
+                btn.classList.add('active');
+                grid.style.display = 'flex';
+                grid.classList.remove('collapsing');
+                grid.classList.add('expanding');
+            }
+        }
+
+        function toggleDropdown(btn) {
+            var wrap = btn.parentElement;
+            var dropdown = wrap.querySelector('.category-dropdown');
+            var isOpen = dropdown.classList.contains('show');
+
+            // Close all others
+            document.querySelectorAll('.category-dropdown.show').forEach(function (d) {
+                d.classList.remove('show');
+                d.parentElement.querySelector('.category-btn').classList.remove('active');
+            });
+
+            if (!isOpen) {
+                dropdown.classList.add('show');
+                btn.classList.add('active');
+            }
+        }
+
+        $(document).on('click', function (e) {
+            if (!$(e.target).closest('.category-wrap').length) {
+                $('.category-dropdown.show').removeClass('show');
+                $('.category-btn.active').removeClass('active');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
