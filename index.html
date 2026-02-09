@@ -264,6 +264,36 @@
             margin-bottom: 0;
         }
 
+        /* Wooden photo showcase */
+        .wooden-photo-wrap {
+            margin-top: 60px;
+        }
+        .wooden-photo-wrap img {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 900px;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(181,162,189,0.25);
+        }
+        @media (max-width: 991px) {
+            .wooden-photo-wrap img {
+                max-height: 400px;
+            }
+        }
+        @media (max-width: 575px) {
+            .wooden-photo-wrap {
+                margin-top: 30px;
+            }
+            .wooden-photo-wrap img {
+                max-width: 100%;
+                max-height: 300px;
+                border-radius: 10px;
+            }
+        }
+
         /* Hero section (Company Introduction) */
         .wpo-hero-section {
             background: linear-gradient(135deg, #faf5f8 0%, #f8f0f5 100%);
@@ -1006,6 +1036,11 @@
                             <h3>Wooden Digital Photo Frame</h3>
                             <p>A keepsake frame that loops messages and shared wedding photos. A lasting memory for your home.</p>
                         </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center wooden-photo-wrap">
+                    <div class="col-lg-10 col-md-10 col-12 text-center wow fadeInUp" data-wow-duration="2000ms">
+                        <img src="assets/images/wooden-photo.jpg" alt="Wooden Digital Photo Frame">
                     </div>
                 </div>
             </div> <!-- end container -->

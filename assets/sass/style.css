@@ -2329,6 +2329,12 @@ a.ui-button:active, .ui-button:active,
   line-height: normal;
   font-family: "monallesia";
   color: #B5A2BD;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-header .navbar-brand img {
+  vertical-align: middle;
 }
 
 .navbar-header .navbar-brand:hover {

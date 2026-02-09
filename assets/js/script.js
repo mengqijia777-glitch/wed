@@ -753,12 +753,12 @@
                 name: { required: true, minlength: 2 },
                 email: { required: true, email: true },
                 phone: { required: true },
-                adress: { required: true },
+                adress: { required: false },
                 guest: { required: true },
                 meal: { required: true },
                 date: { required: true },
                 what: { required: true },
-                service: { required: true }
+                service: { required: false }
             },
             messages: {
                 name: "Please enter your name.",
